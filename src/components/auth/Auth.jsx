@@ -17,7 +17,7 @@ export const Auth = () => {
   const [name, setName] = useState("");
   const [register, setRegister] = useState("");
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
+  const { user, loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -49,7 +49,11 @@ export const Auth = () => {
               autoFocus
               onChange={(e) => setName(e.target.value)}
             />
-            <Button colorScheme="blue" onClick={handleLogin}>
+            <Button
+              colorScheme="blue"
+              onClick={handleLogin}
+              isLoading={loading}
+            >
               Submit
             </Button>
           </TabPanel>
@@ -60,7 +64,11 @@ export const Auth = () => {
               onChange={(e) => setRegister(e.target.value)}
               autoFocus
             />
-            <Button colorScheme="blue" onClick={handleRegister}>
+            <Button
+              colorScheme="blue"
+              onClick={handleRegister}
+              isLoading={loading}
+            >
               Submit
             </Button>
           </TabPanel>

@@ -7,8 +7,7 @@ import { setSearchPage } from "../../features/post/postSlice";
 function Search(pros) {
   const { setSearchRes } = pros;
   const dispatch = useDispatch();
-  const { posts } = useSelector((state) => state.posts);
-  const { loading } = useSelector((state) => state.posts);
+  const { posts, loading } = useSelector((state) => state.posts);
 
   const handleClick = () => {
     setSearchRes(false);
@@ -19,7 +18,7 @@ function Search(pros) {
 
   return (
     <div>
-      <Button colorScheme="purple" size="sm" onClick={handleClick}>
+      <Button colorScheme="purple" size="sm" onClick={handleClick} marginBottom={7}>
         All Posts
       </Button>
       <Post />

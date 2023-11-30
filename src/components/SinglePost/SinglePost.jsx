@@ -10,6 +10,7 @@ export const SinglePost = (props) => {
   const [commentBox, setCommentBox] = useState(false);
   const [comment, setComment] = useState("");
   const { user } = useSelector((state) => state.user);
+  const {commenetloading} = useSelector(state => state.posts)
   const dispatch = useDispatch();
 
   const newDate = new Date(date);
@@ -54,6 +55,7 @@ export const SinglePost = (props) => {
                 size="sm"
                 marginLeft={10}
                 onClick={handleClick}
+                isLoading={commenetloading}
               >
                 Save
               </Button>

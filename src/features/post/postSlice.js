@@ -7,6 +7,7 @@ const initialState = {
   loading: false,
   error: false,
   searchPage: false,
+  commenetloading: false,
 };
 
 export const addPost = createAsyncThunk(
@@ -99,10 +100,10 @@ export const postSlice = createSlice({
         state.error = true;
       })
       .addCase(addComment.pending, (state) => {
-        state.loading = true;
+        state.commenetloading = true;
       })
       .addCase(addComment.fulfilled, (state, { payload }) => {
-        state.loading = false;
+        state.commenetloading = false;
         state.posts = state.posts.map((e) =>
           e._id === payload.postId
             ? { ...e, comments: [...e.comments, payload] }
@@ -110,7 +111,7 @@ export const postSlice = createSlice({
         );
       })
       .addCase(addComment.rejected, (state) => {
-        state.loading = false;
+        state.commenetloading = false;
         state.error = true;
       });
   },

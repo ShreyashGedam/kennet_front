@@ -1,4 +1,4 @@
-import { Button, Input } from "@chakra-ui/react";
+import { Button, Input, Spinner } from "@chakra-ui/react";
 import styles from "./Post.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,8 +9,7 @@ export const Post = () => {
   const dispatch = useDispatch();
   const [message, setMessage] = useState("");
   const logged = JSON.parse(localStorage.getItem("userInfo"));
-  const { posts } = useSelector((state) => state.posts);
-  const { searchPage } = useSelector((state) => state.posts);
+  const { posts, searchPage, loading } = useSelector((state) => state.posts);
 
   useEffect(() => {
     if (!searchPage) dispatch(getPost());
@@ -36,18 +35,40 @@ export const Post = () => {
           </Button>
         </div>
       )}
-      {posts.map((e) => (
-        <div key={e._id}>
-          <SinglePost
-            postMessage={e.post}
-            userName={e.userId.name}
-            date={e.updatedAt}
-            comments={e.comments}
-            postId={e._id}
-            userId={e.userId._id}
+      {loading ? (
+        <div className={styles.loading}>
+          <Spinner
+            thickness="4px"
+            speed="0.65s"
+            emptyColor="gray.200"
+            color="blue.500"
+            size="xl"
           />
         </div>
-      ))}
+      ) : (
+        <>
+          {posts.length === 0 ? (
+            <div className={styles.post}>
+              <p>No Posts related to your search</p>
+            </div>
+          ) : (
+            <>
+              {posts.map((e) => (
+                <div key={e._id}>
+                  <SinglePost
+                    postMessage={e.post}
+                    userName={e.userId.name}
+                    date={e.updatedAt}
+                    comments={e.comments}
+                    postId={e._id}
+                    userId={e.userId._id}
+                  />
+                </div>
+              ))}
+            </>
+          )}
+        </>
+      )}
     </div>
   );
 };

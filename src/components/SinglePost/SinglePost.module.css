@@ -1,12 +1,13 @@
 .container {
-    border: 1px solid;
     margin: auto;
-    margin: 10px;
     width: 98%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .main {
-    padding: 5px;
+    padding: 10px;
 }
 
 .headings {
@@ -31,17 +32,17 @@
     cursor: pointer;
 }
 
-.commentBox{
+.commentBox {
     display: flex;
 }
 
-.commentButton{
+.commentButton {
     background-color: #BB9CC0;
     width: 100px;
     text-align: center;
     border-radius: 5px;
 }
 
-.commentSection{
+.commentSection {
     margin-left: 20px;
 }

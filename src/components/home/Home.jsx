@@ -14,14 +14,12 @@ export const Home = () => {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { searchPage } = useSelector((state) => state.posts);
-  
+
   const handleLogout = () => {
     dispatch(removeUser());
     localStorage.removeItem("userInfo");
     navigate("/auth");
   };
-
 
   const handleSearch = () => {
     if (!search) return;
