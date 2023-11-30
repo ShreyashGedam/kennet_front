@@ -1,0 +1,15 @@
+.container {
+    width: 40%;
+    margin: auto;
+    margin-top: 10vh;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.container p {
+    margin-bottom: 10px;
+}
+
+.container Button{
+    margin-top: 10px;
+}

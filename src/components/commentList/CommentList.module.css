@@ -1,0 +1,37 @@
+.container {
+    margin-left: 20px;
+    border-left: 1px solid #A9A9A9;
+    border-bottom: 1px solid #A9A9A9;
+    align-items: end;
+    margin-bottom: 20px;
+}
+
+.main {
+    width: 70%;
+    padding-top: 15px;
+}
+
+.comment {
+    font-weight: 600;
+}
+
+.heading {
+    display: flex;
+    align-items: baseline
+}
+
+.heading p:last-child {
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.addComment {
+    font-size: 10px;
+    margin: 0;
+    padding: 0%;
+    cursor: pointer;
+    background-color: #BB9CC0;
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+}

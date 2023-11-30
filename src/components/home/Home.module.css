@@ -1,0 +1,41 @@
+.container {
+    width: 95%;
+    margin: auto;
+    margin-top: 5vh;
+} 
+
+.main{
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.main > p{
+    font-size: 18px;
+}
+
+.userName{
+    font-size: 24px;
+    font-weight: 600;
+    color: #7071E8;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: #EEF5FF;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.navbar p:first-child{
+    padding: 10px;
+}
+
+.navbar p:last-child{
+    background-color: #B4BDFF;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
