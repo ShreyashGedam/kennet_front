@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./SinglePost.module.css";
 import { Button, Input } from "@chakra-ui/react";
-import { CommentList } from "../commentList/commentList";
+import { CommentList } from "../commentList/CommentList";
 import { useDispatch, useSelector } from "react-redux";
 import { addComment } from "../../features/post/postSlice";
 
